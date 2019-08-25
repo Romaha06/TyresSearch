@@ -6,5 +6,6 @@ public class SearchOffroadTests extends MainTests {
     public void searchTyresOffroads() throws InterruptedException {
         mainPage.open();
         mainPage.cookiesButton();
+        //Todo
     }
 }
