@@ -11,42 +11,48 @@ public class SearchFormCar extends WebExtansion {
 
 
     @FindBy(xpath = "//select[@id='form_Season']") private WebElement selectSeasons;
-
     private String SEASON_KIND = "//option[@value='%s']";
+
+    @FindBy(xpath = "//select[@name='Width']") private WebElement selectWidth;
+
+    @FindBy(xpath = "//select[@name='CrossSections']") private WebElement selectHeight;
+
+    @FindBy(xpath = "//select[@name='Size']") private WebElement selectSize;
+
 
     public SearchFormCar(WebDriver driver) {
         super(driver);
     }
 
-    public void formSeason(String season) throws InterruptedException {
+    public void formSeason(String season) {
         waitLoadPageUsingScript();
         System.out.println("Choose from Seasons");
         waitAndClick(selectSeasons);
         waitAndClick(driver.findElement(By.xpath(String.format(SEASON_KIND, season))));
     }
 
-    public void width() throws InterruptedException {
+    public void width() {
         waitLoadPageUsingScript();
         System.out.println("Choose from Widht.");
-        driver.findElement(By.xpath("//select[@name='Width']")).click();
+        waitAndClick(selectWidth);
         driver.findElement(By.xpath("//option[@value='255']")).click();
     }
 
-    public void height() throws InterruptedException {
+    public void height()  {
         waitLoadPageUsingScript();
         System.out.println("Choose from Height.");
-        driver.findElement(By.xpath("//select[@name='CrossSections']")).click();
+        waitAndClick(selectHeight);
         driver.findElement(By.xpath("//option[@value='65']")).click();
     }
 
-    public void size() throws InterruptedException {
+    public void size() {
         waitLoadPageUsingScript();
         System.out.println("Choose from Size.");
-        driver.findElement(By.xpath("//select[@name='Size']")).click();
+        waitAndClick(selectSize);
         driver.findElement(By.xpath("//option[@value='16']")).click();
     }
 
-    public void search() throws InterruptedException {
+    public void search() {
         waitLoadPageUsingScript();
         System.out.println("Click button Search.");
         driver.findElement(By.id("tyres_search")).click();

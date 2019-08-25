@@ -25,7 +25,7 @@ public class MainPage extends WebExtansion {
         driver.quit();
     }
 
-    public void cookiesButton() throws InterruptedException {
+    public void cookiesButton() {
         waitLoadPageUsingScript();
         System.out.println("Click Cookies button.");
         try {

@@ -9,7 +9,9 @@ import org.openqa.selenium.support.FindBy;
 public class MenuTypeVeicle extends WebExtansion {
 
     @FindBy(xpath = "//span[text()='PKW']") private WebElement buttonPKW;
-    //описать еще три кнопки и методы для нажатия на них
+
+    @FindBy(xpath = "//a[text()='Offroad/SUV']") private WebElement buttonOffroad_SUV;
+    //описать еще две кнопки и методы для нажатия на них
 
     public MenuTypeVeicle(WebDriver driver) {
         super(driver);
@@ -19,5 +21,10 @@ public class MenuTypeVeicle extends WebExtansion {
         waitLoadPageUsingScript();
         System.out.println("Choosed type 'PKW'");
         waitAndClick(buttonPKW);
+    }
+    public void clickMenuButtonOffroadSuv(){
+        waitLoadPageUsingScript();
+        System.out.println("Choosed type 'buttonOffroad_SUV'");
+        waitAndClick(buttonOffroad_SUV);
     }
 }
